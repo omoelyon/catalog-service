@@ -13,7 +13,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: Corretto
+          distribution: temurin
           java-version: 17
           cache: gradle
       - name: Code vulnerability scanning
