@@ -6,6 +6,7 @@ server:
       min-spare: 5
     connection-timeout: 2s
     keep-alive-timeout: 15s
+  shutdown: graceful
 polar:
   greeting:  Welcome to the local book catalog!
 spring:
@@ -31,6 +32,8 @@ spring:
     import: "optional:configserver:"
   application:
     name: catalog-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 management:
   endpoints:
     web:
