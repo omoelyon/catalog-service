@@ -37,6 +37,9 @@ jobs:
         run:  |
           chmod +x gradlew
           ./gradlew build
+      - name: Validate Kubernetes manifests
+        run: |
+          kubeconform -summary k8s
 
   package:
     name: Package and Publish
