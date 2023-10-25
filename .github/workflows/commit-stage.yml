@@ -38,8 +38,9 @@ jobs:
           chmod +x gradlew
           ./gradlew build
       - name: Validate Kubernetes manifests
-        run: |
-          kubeconform -summary k8s
+        uses: hermanbanken/kubeconform-action@v1
+        with:
+          options: ["-output", "json", "k8s"]
 
   package:
     name: Package and Publish
